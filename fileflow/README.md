@@ -16,6 +16,8 @@
 
  -  Script Execution: When the EC2 instance is loaded, a script runs that retrieves the input text and file path from DynamoDB, appends the text to the file, and saves it in the S3 bucket as output.txt. The file path of output.txt is also saved in DynamoDB.
 
+![Alt text](<Screenshot 2024-04-12 at 3.18.39 AM.png>)
+
 # Configuration
 ## S3 Bucket Name: 
    - fileflow-s3 -> contains the input file
