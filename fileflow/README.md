@@ -12,6 +12,7 @@
  -  Stream Trigger: A new item added to the DynamoDB table triggers another Lambda function through Dynamo Stream.
 ![Alt text](<Screenshot 2024-04-12 at 2.41.04 AM.png>)
  -  EC2 Instance Initiation: The triggered Lambda function initiates a VM of an EC2 instance.
+ ![Alt text](<Screenshot 2024-04-12 at 3.02.59 AM.png>)
 
  -  Script Execution: When the EC2 instance is loaded, a script runs that retrieves the input text and file path from DynamoDB, appends the text to the file, and saves it in the S3 bucket as output.txt. The file path of output.txt is also saved in DynamoDB.
 
@@ -35,7 +36,31 @@
     AWS EC2
 
 
-Installation and Setup
-[Instructions for setting up the project]
-Usage
-[Instructions on how to use the application]
+# Installation and Setup:
+
+## Clone the Repository:
+
+git clone https://github.com/username/repository.git
+Replace https://github.com/username/repository.git with the URL of the repository you want to clone.
+
+## Navigate into the Project Directory:
+
+
+cd repository
+Replace repository with the name of the directory created when you cloned the repository.
+
+## Install Dependencies:
+
+
+npm install
+This command will install the necessary dependencies specified in the package.json file.
+
+## Run the Development Server:
+
+
+npm start
+This command will start the development server. Once it's running, you can view your React app in your browser at http://localhost:3000.
+
+# AWS Credentials
+- username: fovuschallenge
+- password: @FovusFileflow2024
