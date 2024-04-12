@@ -1,32 +1,40 @@
 # Introduction
   This project is a basic React application that includes a text box, a file input option, and a submit button. It demonstrates the integration of various AWS services, including S3, API Gateway, Lambda, DynamoDB, and EC2.
 # How It Works
- ## User Interaction: The user enters text in the text box and selects a file to upload.
+ - User Interaction: The user enters text in the text box and selects a file to upload.
  ![Alt text](image.png)
 
-# Submit Action: Upon clicking the submit button, the file is uploaded to an S3 bucket.
+ - Submit Action: Upon clicking the submit button, the file is uploaded to an S3 bucket.
 ![Alt text](<Screenshot 2024-04-12 at 2.36.19 AM.png>)
 
-# Data Storage: Through API Gateway and a Lambda function, the S3 file path and the input text are stored in a DynamoDB table.
+ - Data Storage: Through API Gateway and a Lambda function, the S3 file path and the input text are stored in a DynamoDB table.
+![Alt text](<Screenshot 2024-04-12 at 2.39.58 AM.png>)
+ -  Stream Trigger: A new item added to the DynamoDB table triggers another Lambda function through Dynamo Stream.
+![Alt text](<Screenshot 2024-04-12 at 2.41.04 AM.png>)
+ -  EC2 Instance Initiation: The triggered Lambda function initiates a VM of an EC2 instance.
 
-Stream Trigger: A new item added to the DynamoDB table triggers another Lambda function through Dynamo Stream.
-EC2 Instance Initiation: The triggered Lambda function initiates a VM of an EC2 instance.
-Script Execution: When the EC2 instance is loaded, a script runs that retrieves the input text and file path from DynamoDB, appends the text to the file, and saves it in the S3 bucket as output.txt. The file path of output.txt is also saved in DynamoDB.
-Configuration
-S3 Bucket Name: [Placeholder for S3 Bucket Name]
-DynamoDB Table Name: [Placeholder for DynamoDB Table Name]
-Lambda Function Names: [Placeholder for Lambda Function Names]
-EC2 Instance ID: [Placeholder for EC2 Instance ID]
-Tools Used
-React
-AWS S3
-AWS API Gateway
-AWS Lambda
-AWS DynamoDB
-AWS EC2
+ -  Script Execution: When the EC2 instance is loaded, a script runs that retrieves the input text and file path from DynamoDB, appends the text to the file, and saves it in the S3 bucket as output.txt. The file path of output.txt is also saved in DynamoDB.
+
+# Configuration
+## S3 Bucket Name: 
+   - fileflow-s3 -> contains the input file
+   - fileflow-script-bucket -> contains thes script to append input text to the inputFile.txt and save it as outputFile.txt
+
+## DynamoDB Table Name: 
+   - fileflow -> dynamodb responsible for storing the path of inputFile.txt and outputFile.txt
+## Lambda Function Names: 
+   - lambda-python -> contains the python script to store input file into s3 bucket
+   - lambda-script -> contains the python script to trigger and destroy ec2 instance 
+
+# Tools Used
+    React
+    AWS S3
+    AWS API Gateway
+    AWS Lambda
+    AWS DynamoDB
+    AWS EC2
 
 
-Live video
 Installation and Setup
 [Instructions for setting up the project]
 Usage
