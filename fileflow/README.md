@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Introduction
+  This project is a basic React application that includes a text box, a file input option, and a submit button. It demonstrates the integration of various AWS services, including S3, API Gateway, Lambda, DynamoDB, and EC2.
+# How It Works
+ ## User Interaction: The user enters text in the text box and selects a file to upload.
+ ![Alt text](image.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Submit Action: Upon clicking the submit button, the file is uploaded to an S3 bucket.
+![Alt text](<Screenshot 2024-04-12 at 2.36.19 AM.png>)
 
-## Available Scripts
+# Data Storage: Through API Gateway and a Lambda function, the S3 file path and the input text are stored in a DynamoDB table.
 
-In the project directory, you can run:
+Stream Trigger: A new item added to the DynamoDB table triggers another Lambda function through Dynamo Stream.
+EC2 Instance Initiation: The triggered Lambda function initiates a VM of an EC2 instance.
+Script Execution: When the EC2 instance is loaded, a script runs that retrieves the input text and file path from DynamoDB, appends the text to the file, and saves it in the S3 bucket as output.txt. The file path of output.txt is also saved in DynamoDB.
+Configuration
+S3 Bucket Name: [Placeholder for S3 Bucket Name]
+DynamoDB Table Name: [Placeholder for DynamoDB Table Name]
+Lambda Function Names: [Placeholder for Lambda Function Names]
+EC2 Instance ID: [Placeholder for EC2 Instance ID]
+Tools Used
+React
+AWS S3
+AWS API Gateway
+AWS Lambda
+AWS DynamoDB
+AWS EC2
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Live video
+Installation and Setup
+[Instructions for setting up the project]
+Usage
+[Instructions on how to use the application]
